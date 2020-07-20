@@ -1,0 +1,4 @@
+"""Users URL Configuration."""
+
+urlpatterns = [
+]

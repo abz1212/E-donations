@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "e_donations"
+version = "0.1.0"
+description = "Behold E-donations Project"
+authors = ["Mohamed Nesredin <mohamed-nesredin@example.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "example.com"
+documentation = ""
+repository = "https://github.com/mohamednesredin/e-donations/"
+keywords = ["e_donations"]
+
+[tool.poetry.dependencies]
+python = "3.8.4"
+argon2-cffi = "^20.1.0"
+confusable_homoglyphs = "^3.2.0"
+dj-database-url = "^0.5"
+django = "^3.0"
+djangorestframework = "^3.11.0"
+django-axes = "^5.4.1"
+django-cors-headers = "^3.4.0"
+django-import-export = "2.2"
+gunicorn = "^20.0"
+Pillow = "^7.2"
+psycopg2-binary = "^2.8"
+python-decouple = "^3.3"
+pwned-passwords-django = "^1.4"
+whitenoise = {extras = ["brotli"], version = "^5.1"}
+
+[tool.poetry.dev-dependencies]
+
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
