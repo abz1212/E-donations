@@ -18,6 +18,7 @@ urlpatterns = i18n_patterns(
     ),
     path("api/contact/", include("contact.urls")),
     path("api/donations/", include("donations.urls")),
+    path("api/users/", include("users.urls")),
     prefix_default_language=False
 )
 
