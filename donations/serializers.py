@@ -1,44 +1,40 @@
 from rest_framework import serializers
-from .models import Request, Sponsor
+from .models import Blood, Sponsor, Organ
 
 
 class BloodDonationRequestsSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Request
+        model = Blood
         fields = (
-            "first_name",
-            "last_name",
-            "email",
-            "phone_number",
-            "country",
-            "city",
-            "date_of_birth",
             "blood_type",
-            "message",
+            "height",
+            "weight",
+            "last_donate_date",
+            "has_hiv",
+            "has_diabetes",
+            "has_tattoo",
+            "been_injured",
+            "blood_transfusion",
+            "been_in_prison",
+            "feedback",
         )
 
 
 class OrganDonationRequestsSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Request
+        model = Organ
         fields = (
-            "first_name",
-            "last_name",
-            "email",
-            "phone_number",
-            "country",
-            "city",
-            "date_of_birth",
-            "blood_type",
-            "height",
-            "weight",
-            "blood_pressure",
+            "organ",
             "allergies",
-            "medical_conditions",
+            "medications",
+            "has_disease",
+            "has_asthma",
+            "has_diabetes",
+            "has_hypertension",
+            "has_tuberculosis",
             "organ_date_registration",
-            "organs_to_be_donated",
         )
 
 
@@ -49,11 +45,6 @@ class MoneyDonationSerializer(serializers.ModelSerializer):
         model = Sponsor
 
         fields = (
-            "first_name",
-            "last_name",
-            "email",
-            "phone_number",
-            "country",
-            "city",
+            "organization",
             "amount",
         )

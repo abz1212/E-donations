@@ -6,6 +6,19 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
+def user_upload_to(instance: "CustomUser", filename: str) -> str:
+    """A help Function to change the image upload path.
+
+    Args:
+        instance: django model
+        filename: the uploaded file name
+
+    Returns:
+        path in string format
+    """
+    return f"images/profile_pics/{instance.username}/{filename}"
+
+
 class CustomUser(AbstractUser):
     """Reference user model."""
 
@@ -16,6 +29,20 @@ class CustomUser(AbstractUser):
     email = models.EmailField(verbose_name=_("email address"), unique=True)
 
     full_name = models.CharField(verbose_name=_("full name"), max_length=300)
+
+    country = models.CharField(verbose_name=_("country"), max_length=300)
+
+    city = models.CharField(verbose_name=_("city"), max_length=300)
+
+    picture = models.ImageField(
+        verbose_name=_("picture"),
+        default="images/default/pic.jpg",
+        upload_to=user_upload_to,
+    )
+
+    phone_number = models.CharField(verbose_name=_("phone number"), max_length=10)
+
+    date_of_birth = models.DateTimeField(verbose_name=_("date of birth"), null=True)
 
     class Meta:
         """Meta data."""

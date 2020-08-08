@@ -1,4 +1,5 @@
 """Collection of model."""
+from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -8,77 +9,154 @@ class BloodType(models.TextChoices):
 
     A = ("A", _("A"))
 
+    A_PLUS = ("A+", _("A+"))
+
+    A_MINUS = ("A-", _("A-"))
+
     AB = ("AB", _("AB"))
 
     B = ("B", _("B"))
 
+    B_PLUS = ("B+", _("B+"))
+
+    B_MINUS = ("B-", _("B-"))
+
     o = ("O", _("O"))
 
+    o_PLUS = ("O+", _("O+"))
 
-class Request(models.Model):
-    """Reference request model."""
+    o_MINUS = ("O-", _("O-"))
 
-    first_name = models.CharField(verbose_name=_("first name"), max_length=300)
 
-    last_name = models.CharField(verbose_name=_("last name"), max_length=300)
+class Organization(models.TextChoices):
+    """Enum class for organization type."""
 
-    email = models.EmailField(verbose_name=_("email address"), unique=True)
+    COVID = ("COVID-19", _("COVID-19"))
 
-    phone_number = models.CharField(verbose_name=_("phone number"), max_length=15)
+    MAKEDONIA = ("MAKEDONIA", _("MAKEDONIA"))
 
-    country = models.CharField(verbose_name=_("country"), max_length=100)
+    SELE_ENAT_CHARITABLE = ("SELE ENAT CHARITABLE", _("SELE ENAT CHARITABLE"))
 
-    city = models.CharField(verbose_name=_("city"), max_length=100)
 
-    date_of_birth = models.DateField(verbose_name=_("date of birth"))
+class OrgansChooses(models.TextChoices):
+    """Enum class for organization type."""
 
-    blood_type = models.CharField(choices=BloodType.choices, verbose_name=_("blood type"), null=True, blank=True, max_length=5)
+    HEART = ("HEART", _("HEART"))
 
-    message = models.TextField(verbose_name=_("message"), null=True, blank=True)
+    KIDENY = ("KIDENY", _("KIDENY"))
 
-    height = models.FloatField(verbose_name=_("height"), null=True, blank=True)
+    LIVER = ("LIVER", _("LIVER"))
 
-    weight = models.FloatField(verbose_name=_("weight"), null=True, blank=True)
+    LUNG = ("LUNG", _("LUNG"))
 
-    blood_pressure = models.FloatField(verbose_name=_("blood pressure"), null=True, blank=True)
+    PANCREAS = ("PANCREAS", _("PANCREAS"))
 
-    allergies = models.CharField(verbose_name=_("allergies"), null=True, blank=True, max_length=200)
+    INTESTINES = ("INTESTINES", _("INTESTINES"))
 
-    medical_conditions = models.CharField(verbose_name=_("medical conditions"), null=True, blank=True, max_length=300)
 
-    organ_date_registration = models.DateField(verbose_name=_("organ date registration"), null=True, blank=True)
+class Blood(models.Model):
+    """Reference blood model."""
 
-    organs_to_be_donated = models.TextField(verbose_name=_("organs to be donated"), null=True, blank=True)
+    donor = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        verbose_name=_("donor"),
+        on_delete=models.CASCADE,
+        related_name="bloods",
+        db_index=True,
+    )
 
-    is_accepted = models.BooleanField(verbose_name=_("is accepted"), null=True, blank=True)
+    blood_type = models.CharField(choices=BloodType.choices, verbose_name=_("blood type"),
+                                  max_length=5)
+
+    height = models.FloatField(verbose_name=_("height"))
+
+    weight = models.FloatField(verbose_name=_("weight"))
+
+    last_donate_date = models.DateField(verbose_name=_("last donate date"), null=True, blank=True)
+
+    has_hiv = models.BooleanField(verbose_name=_("do you have hiv"), null=True, blank=True)
+
+    take_drugs = models.BooleanField(verbose_name=_("do you use drugs"), null=True, blank=True)
+
+    has_diabetes = models.BooleanField(verbose_name=_("do you use diabetes"), null=True, blank=True)
+
+    has_tattoo = models.BooleanField(verbose_name=_("had a tattoo"), null=True, blank=True)
+
+    been_injured = models.BooleanField(verbose_name=_("been injured with a used neddle"), null=True, blank=True)
+
+    blood_transfusion = models.BooleanField(verbose_name=_("had a blood transfusion"), null=True, blank=True)
+
+    been_in_prison = models.BooleanField(verbose_name=_("been imprisoned in a prison"), null=True, blank=True)
+
+    feedback = models.TextField(verbose_name=_("feedback"), null=True, blank=True)
 
     created_at = models.DateTimeField(verbose_name=_("created at"), auto_now_add=True)
 
     class Meta:
         """Meta data."""
 
-        verbose_name = _("request")
-        verbose_name_plural = _("requests")
+        verbose_name = _("blood")
+        verbose_name_plural = _("bloods")
 
-    def __str__(self: "Request") -> str:
+    def __str__(self: "Blood") -> str:
         """It return readable name for the model."""
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.donor}"
+
+
+class Organ(models.Model):
+    """Reference organ model."""
+
+    donor = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        verbose_name=_("donor"),
+        on_delete=models.CASCADE,
+        related_name="organs",
+        db_index=True,
+    )
+
+    organ = models.CharField(choices=OrgansChooses.choices, verbose_name=_("organ"), max_length=200)
+
+    allergies = models.BooleanField(verbose_name=_("allergies"), null=True, blank=True)
+
+    medications = models.BooleanField(verbose_name=_("medications"), null=True, blank=True)
+
+    has_disease = models.BooleanField(verbose_name=_("do you have a disease"), null=True, blank=True)
+
+    has_asthma = models.BooleanField(verbose_name=_("do you have a asthma"), null=True, blank=True)
+
+    has_diabetes = models.BooleanField(verbose_name=_("do you use diabetes"), null=True, blank=True)
+
+    has_hypertension = models.BooleanField(verbose_name=_("do you have a hypertension"), null=True, blank=True)
+
+    has_tuberculosis = models.BooleanField(verbose_name=_("do you have a tuberculosis"), null=True, blank=True)
+
+    organ_date_registration = models.DateField(verbose_name=_("organ date registration"), null=True, blank=True)
+
+    created_at = models.DateTimeField(verbose_name=_("created at"), auto_now_add=True)
+
+    class Meta:
+        """Meta data."""
+
+        verbose_name = _("organ")
+        verbose_name_plural = _("organs")
+
+    def __str__(self: "Organ") -> str:
+        """It return readable name for the model."""
+        return f"{self.donor}"
 
 
 class Sponsor(models.Model):
     """Reference sponsor model."""
 
-    first_name = models.CharField(verbose_name=_("first name"), max_length=300)
+    donor = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        verbose_name=_("donor"),
+        on_delete=models.CASCADE,
+        related_name="sponsors",
+        db_index=True,
+    )
 
-    last_name = models.CharField(verbose_name=_("last name"), max_length=300)
-
-    email = models.EmailField(verbose_name=_("email address"), unique=True)
-
-    phone_number = models.CharField(verbose_name=_("phone number"), max_length=15)
-
-    country = models.CharField(verbose_name=_("country"), max_length=100)
-
-    city = models.CharField(verbose_name=_("city"), max_length=100)
+    organization = models.CharField(choices=Organization.choices, verbose_name=_("blood type"), max_length=300)
 
     amount = models.PositiveIntegerField(verbose_name=_("amount"))
 
@@ -92,5 +170,5 @@ class Sponsor(models.Model):
 
     def __str__(self: "Sponsor") -> str:
         """It return readable name for the model."""
-        return f"{self.first_name} {self.last_name} Sponsor {self.amount}"
+        return f"{self.donor}"
 

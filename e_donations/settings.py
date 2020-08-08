@@ -250,6 +250,12 @@ if DEBUG:
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
+# django-extensions
+# ------------------------------------------------------------------------------
+if DEBUG:
+    INSTALLED_APPS.append("django_extensions")
+
+
 # django-axes
 # ------------------------------------------------------------------------------
 AXES_COOLOFF_TIME = timedelta(minutes=60) if not DEBUG else timedelta(minutes=5)

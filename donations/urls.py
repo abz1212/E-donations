@@ -7,7 +7,7 @@ urlpatterns = [
 
     path("blood/", BloodDonationRequestsCreateAPI.as_view()),
 
-    path("oragn/", OrganDonationRequestsCreateAPI.as_view()),
+    path("organ/", OrganDonationRequestsCreateAPI.as_view()),
 
     path("money/", MoneyDonationCreateAPI.as_view()),
 

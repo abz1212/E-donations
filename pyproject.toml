@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "e_donations"
-version = "0.1.0"
+version = "0.2.0"
 description = "Behold E-donations Project"
 authors = ["Mohamed Nesredin <mohamed-nesredin@example.com>"]
 license = "MIT"
@@ -28,6 +28,7 @@ pwned-passwords-django = "^1.4"
 whitenoise = {extras = ["brotli"], version = "^5.1"}
 
 [tool.poetry.dev-dependencies]
+django-extensions = "^3.0.4"
 
 
 [build-system]
