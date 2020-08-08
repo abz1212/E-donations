@@ -8,6 +8,7 @@ class BloodDonationRequestsSerializer(serializers.ModelSerializer):
         model = Blood
         fields = (
             "blood_type",
+            "amount",
             "height",
             "weight",
             "last_donate_date",
@@ -48,3 +49,15 @@ class MoneyDonationSerializer(serializers.ModelSerializer):
             "organization",
             "amount",
         )
+
+
+class DonorSerializer(serializers.Serializer):
+
+    username = serializers.CharField(read_only=True)
+
+    picture = serializers.ImageField(read_only=True)
+
+
+class RecentDonorsSerializer(serializers.Serializer):
+    donor = DonorSerializer(read_only=True)
+

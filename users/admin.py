@@ -44,7 +44,7 @@ class CustomUserAdmin(ExportActionModelAdmin, UserAdmin):
         (None, {"fields": ("username", "password")}),
         (
             _("Personal info"),
-            {"classes": ("collapse",), "fields": ("full_name", "email",)},
+            {"classes": ("collapse",), "fields": ("full_name", "email", "country", "city", "picture", "phone_number", "date_of_birth", "total_blood_amount", "total_money_amount", "list_of_organs")},
         ),
         (_("Permissions"),
             {
@@ -67,12 +67,16 @@ class CustomUserAdmin(ExportActionModelAdmin, UserAdmin):
     list_display = (
         "username",
         "email",
+        "total_blood_amount",
+        "total_money_amount",
+        "list_of_organs",
         "is_active",
     )
 
     list_filter = ("last_login",)
 
     date_hierarchy = "date_joined"
+    readonly_fields = ("total_blood_amount", "total_money_amount", "list_of_organs")
 
 
 admin.site.site_title = _("E-donations site admin")

@@ -53,3 +53,23 @@ class CustomUser(AbstractUser):
     def __str__(self: "CustomUser") -> str:
         """It return readable name for the model."""
         return f"{self.username}"
+
+    def total_blood_amount(self):
+        bloods = self.bloods.all()
+        return sum(blood.amount for blood in bloods)
+
+    def total_money_amount(self):
+        moneys = self.sponsors.all()
+
+        return sum(money.amount for money in moneys)
+
+    def list_of_organs(self):
+        organs = self.organs.all()
+
+        return [organ.organ for organ in organs]
+
+    total_blood_amount.short_description = _("Total Blood Donation")
+
+    total_money_amount.short_description = _("Total Money Donation")
+
+    list_of_organs.short_description = _("Organs")

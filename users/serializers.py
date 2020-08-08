@@ -12,6 +12,11 @@ class UserSerializer(serializers.ModelSerializer):
             "password",
             "email",
             "full_name",
+            "country",
+            "city",
+            "picture",
+            "phone_number",
+            "date_of_birth",
         )
         extra_kwargs = {'password': {'write_only': True, "style": {"input_type": "password"}}}
 
@@ -25,3 +30,18 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(password)
         user.save()
         return user
+
+
+class ProfileSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = CustomUser
+        fields = (
+            "username",
+            "email",
+            "country",
+            "city",
+            "picture",
+            "phone_number",
+            "date_of_birth",
+        )

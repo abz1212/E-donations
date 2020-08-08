@@ -68,6 +68,8 @@ class Blood(models.Model):
     blood_type = models.CharField(choices=BloodType.choices, verbose_name=_("blood type"),
                                   max_length=5)
 
+    amount = models.PositiveIntegerField(verbose_name=_("amount"))
+
     height = models.FloatField(verbose_name=_("height"))
 
     weight = models.FloatField(verbose_name=_("weight"))
