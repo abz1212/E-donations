@@ -7,7 +7,7 @@ class Contact(models.Model):
 
     title = models.CharField(verbose_name=_("title"), max_length=100)
 
-    full_name = models.CharField(verbose_name=_("full_name"), max_length=300)
+    full_name = models.CharField(verbose_name=_("full name"), max_length=300)
 
     email = models.EmailField(verbose_name=_("email address"), unique=True)
 
