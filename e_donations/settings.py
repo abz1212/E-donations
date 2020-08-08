@@ -50,6 +50,7 @@ THIRD_PARTY_APPS = [
     "axes",
     "import_export",
     "corsheaders",
+    "storages",
 ]
 
 LOCAL_APPS = ["users.apps.UsersConfig", "donations.apps.DonationsConfig", "contact.apps.ContactConfig"]
@@ -267,6 +268,15 @@ AXES_USE_USER_AGENT = True
 # https://github.com/adamchainz/django-cors-headers#cors_origin_allow_all
 # Todo: Change this in production
 CORS_ORIGIN_ALLOW_ALL = True
+
+# django-storages
+# ------------------------------------------------------------------------------
+if not DEBUG:
+    DEFAULT_FILE_STORAGE = "storages.backends.dropbox.DropBoxStorage"
+
+    DROPBOX_OAUTH2_TOKEN = config("DROPBOX_OAUTH2_TOKEN", cast=str)
+
+    DROPBOX_ROOT_PATH = "media"
 
 # Your settings...
 # ------------------------------------------------------------------------------
