@@ -42,7 +42,7 @@ class CustomUser(AbstractUser):
 
     phone_number = models.CharField(verbose_name=_("phone number"), max_length=10)
 
-    date_of_birth = models.DateTimeField(verbose_name=_("date of birth"), null=True)
+    date_of_birth = models.DateField(verbose_name=_("date of birth"), null=True)
 
     class Meta:
         """Meta data."""
