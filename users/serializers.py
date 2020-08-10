@@ -44,4 +44,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             "picture",
             "phone_number",
             "date_of_birth",
+            "total_blood_amount",
+            "total_money_amount",
+            "list_of_organs",
         )
