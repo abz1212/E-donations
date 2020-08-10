@@ -1,6 +1,6 @@
 """Django base settings for E-donations project."""
 import pathlib
-from datetime import timedelta
+from datetime import datetime, timedelta
 
 from decouple import Csv, config
 from dj_database_url import parse as db_url
@@ -229,6 +229,51 @@ else:
 # ------------------------------------------------------------------------------
 DATABASES = {
     "default": config("DATABASE_URL", cast=db_url, default="sqlite:///db.sqlite3")
+}
+
+# LOGGER
+# ------------------------------------------------------------------------------
+LOG_DATE_FORMAT = datetime.now().strftime("%B %d, %Y")
+CONSOLE_LOGGING_FILE = BASE_DIR.joinpath(f"logs/django_{LOG_DATE_FORMAT}.log")
+
+LOGGING = {
+    "version": 1,
+    "loggers": {
+        # root logger
+        "": {"level": "INFO", "handlers": ["console", "mail_admins", "file"]},
+        "django": {
+            "handlers": ["console", "mail_admins", "file"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "django.server": {"propagate": True},
+    },
+    "formatters": {
+        "my_formatter": {
+            "format": "{asctime} {levelname} {threadName} {name} {filename}"
+            " {funcName} {module} {message}",
+            "style": "{",
+        },
+    },
+    "filters": {"require_debug_false": {"()": "django.utils.log.RequireDebugFalse"}},
+    "handlers": {
+        "mail_admins": {
+            "level": "ERROR",
+            "filters": ["require_debug_false"],
+            "class": "django.utils.log.AdminEmailHandler",
+            "include_html": True,
+        },
+        "console": {"class": "logging.StreamHandler", "formatter": "my_formatter"},
+        "file": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": CONSOLE_LOGGING_FILE,
+            "mode": "a",
+            "encoding": "utf-8",
+            "formatter": "my_formatter",
+            "backupCount": 5,
+            "maxBytes": 10485760,
+        },
+    },
 }
 
 # Third-Party Settings
