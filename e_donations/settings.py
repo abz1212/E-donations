@@ -240,9 +240,9 @@ LOGGING = {
     "version": 1,
     "loggers": {
         # root logger
-        "": {"level": "INFO", "handlers": ["console", "mail_admins", "file"]},
+        "": {"level": "INFO", "handlers": ["console"]},
         "django": {
-            "handlers": ["console", "mail_admins", "file"],
+            "handlers": ["console"],
             "level": "INFO",
             "propagate": False,
         },
@@ -264,15 +264,6 @@ LOGGING = {
             "include_html": True,
         },
         "console": {"class": "logging.StreamHandler", "formatter": "my_formatter"},
-        "file": {
-            "class": "logging.handlers.RotatingFileHandler",
-            "filename": CONSOLE_LOGGING_FILE,
-            "mode": "a",
-            "encoding": "utf-8",
-            "formatter": "my_formatter",
-            "backupCount": 5,
-            "maxBytes": 10485760,
-        },
     },
 }
 
