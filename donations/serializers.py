@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Blood, Sponsor, Organ
+from .models import Blood, Sponsor, Organ, Organization
 
 
 class BloodDonationRequestsSerializer(serializers.ModelSerializer):
@@ -8,6 +8,10 @@ class BloodDonationRequestsSerializer(serializers.ModelSerializer):
         model = Blood
         fields = (
             "blood_type",
+            "code",
+            "number",
+            "country",
+            "city",
             "amount",
             "height",
             "weight",
@@ -15,6 +19,7 @@ class BloodDonationRequestsSerializer(serializers.ModelSerializer):
             "has_hiv",
             "has_diabetes",
             "has_tattoo",
+            "take_drugs",
             "been_injured",
             "blood_transfusion",
             "been_in_prison",
@@ -28,6 +33,10 @@ class OrganDonationRequestsSerializer(serializers.ModelSerializer):
         model = Organ
         fields = (
             "organ",
+            "ocountry",
+            "ocity",
+            "ocode",
+            "onumber",
             "allergies",
             "medications",
             "has_disease",
@@ -35,11 +44,15 @@ class OrganDonationRequestsSerializer(serializers.ModelSerializer):
             "has_diabetes",
             "has_hypertension",
             "has_tuberculosis",
+            "has_cardiovascular",
+            "has_transplants",
+            "has_education",
             "organ_date_registration",
         )
 
 
 class MoneyDonationSerializer(serializers.ModelSerializer):
+    organization = serializers.ChoiceField(("COVID-19", "MAKEDONIA", "SELE ENAT CHARITABLE", "ETHIOPIAN CENTER FOR DISABILITY AND DEVLOPMENT"))
 
     class Meta:
 
@@ -47,7 +60,15 @@ class MoneyDonationSerializer(serializers.ModelSerializer):
 
         fields = (
             "organization",
+            "users",
             "amount",
+            "one",
+            "five",
+            "oone",
+            "country",
+            "city",
+            "code",
+            "number",
         )
 
 

@@ -37,6 +37,11 @@ class Organization(models.TextChoices):
 
     SELE_ENAT_CHARITABLE = ("SELE ENAT CHARITABLE", _("SELE ENAT CHARITABLE"))
 
+    ETHIOPIAN_CENTER_FOR_DISABILITY_AND_DEVLOPMENT = (
+        "ETHIOPIAN CENTER FOR DISABILITY AND DEVLOPMENT",
+        _("ETHIOPIAN CENTER FOR DISABILITY AND DEVLOPMENT")
+    )
+
 
 class OrgansChooses(models.TextChoices):
     """Enum class for organization type."""
@@ -67,6 +72,14 @@ class Blood(models.Model):
 
     blood_type = models.CharField(choices=BloodType.choices, verbose_name=_("blood type"),
                                   max_length=5)
+
+    code = models.CharField(verbose_name=_("code"), max_length=4)
+
+    number = models.CharField(verbose_name=_("number"), max_length=40)
+
+    country = models.CharField(verbose_name=_("country"), max_length=40)
+
+    city = models.CharField(verbose_name=_("city"), max_length=40)
 
     amount = models.PositiveIntegerField(verbose_name=_("amount"))
 
@@ -116,6 +129,18 @@ class Organ(models.Model):
         db_index=True,
     )
 
+    ocode = models.CharField(verbose_name=_("ocode"),
+                             max_length=40)
+
+    ocountry = models.CharField(verbose_name=_("ocountry"),
+                                max_length=40)
+
+    ocity = models.CharField(verbose_name=_("ocity"),
+                             max_length=40)
+
+    onumber = models.CharField(verbose_name=_("onumber"),
+                               max_length=40)
+
     organ = models.CharField(choices=OrgansChooses.choices, verbose_name=_("organ"), max_length=200)
 
     allergies = models.BooleanField(verbose_name=_("allergies"), null=True, blank=True)
@@ -131,6 +156,12 @@ class Organ(models.Model):
     has_hypertension = models.BooleanField(verbose_name=_("do you have a hypertension"), null=True, blank=True)
 
     has_tuberculosis = models.BooleanField(verbose_name=_("do you have a tuberculosis"), null=True, blank=True)
+
+    has_cardiovascular = models.BooleanField(verbose_name=_("do you have a cardiovascular"), null=True, blank=True)
+
+    has_transplants = models.BooleanField(verbose_name=_("do you have a transplants"), null=True, blank=True)
+
+    has_education = models.BooleanField(verbose_name=_("do you have a education"), null=True, blank=True)
 
     organ_date_registration = models.DateField(verbose_name=_("organ date registration"), null=True, blank=True)
 
@@ -158,9 +189,26 @@ class Sponsor(models.Model):
         db_index=True,
     )
 
-    organization = models.CharField(choices=Organization.choices, verbose_name=_("blood type"), max_length=300)
+    organization = models.CharField(choices=Organization.choices, verbose_name=_("organization"), max_length=300, blank=True, null=True)
+
+    users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="users_sponsors", blank=True)
 
     amount = models.PositiveIntegerField(verbose_name=_("amount"))
+
+    code = models.CharField(verbose_name=_("code"),
+                            max_length=4)
+    number = models.CharField(verbose_name=_("number"),
+                              max_length=40)
+    country = models.CharField(verbose_name=_("country"),
+                               max_length=40)
+    city = models.CharField(verbose_name=_("city"),
+                            max_length=40)
+
+    one = models.BooleanField(verbose_name=_("one"), null=True, blank=True)
+
+    five = models.BooleanField(verbose_name=_("five"), null=True, blank=True)
+
+    oone = models.BooleanField(verbose_name=_("oone"), null=True, blank=True)
 
     created_at = models.DateTimeField(verbose_name=_("created at"), auto_now_add=True)
 

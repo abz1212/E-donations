@@ -48,3 +48,32 @@ class ProfileSerializer(serializers.ModelSerializer):
             "total_money_amount",
             "list_of_organs",
         )
+
+
+class UserListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = CustomUser
+        fields = ("username", "picture", "id")
+
+
+class UserPictureUpdateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = CustomUser
+        fields = ("picture",)
+
+
+class UserChangePasswordSerializer(serializers.Serializer):
+
+    old_password = serializers.CharField(style={"input_type": "password"})
+
+    new_password = serializers.CharField(style={"input_type": "password"})
+
+    retype_new_password = serializers.CharField(style={"input_type": "password"})
+
+    def validate_new_password(self, password: str):
+
+        validate_password(password=password)
+
+        return super(UserChangePasswordSerializer, self).validate(password)
