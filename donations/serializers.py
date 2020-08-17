@@ -52,7 +52,7 @@ class OrganDonationRequestsSerializer(serializers.ModelSerializer):
 
 
 class MoneyDonationSerializer(serializers.ModelSerializer):
-    organization = serializers.ChoiceField(("COVID-19", "MAKEDONIA", "SELE ENAT CHARITABLE", "ETHIOPIAN CENTER FOR DISABILITY AND DEVLOPMENT"))
+    organization = serializers.ChoiceField(("COVID-19", "MAKEDONIA", "SELE ENAT CHARITABLE", "ETHIOPIAN CENTER FOR DISABILITY AND DEVLOPMENT"), required=False)
 
     class Meta:
 
