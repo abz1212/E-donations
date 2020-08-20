@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Blood, Sponsor, Organ, Organization
+from .models import Blood, Sponsor, Organ, Acceptor
 
 
 class BloodDonationRequestsSerializer(serializers.ModelSerializer):
@@ -33,10 +33,10 @@ class OrganDonationRequestsSerializer(serializers.ModelSerializer):
         model = Organ
         fields = (
             "organ",
-            "ocountry",
-            "ocity",
-            "ocode",
-            "onumber",
+            "country",
+            "city",
+            "code",
+            "number",
             "allergies",
             "medications",
             "has_disease",
@@ -62,9 +62,7 @@ class MoneyDonationSerializer(serializers.ModelSerializer):
             "organization",
             "users",
             "amount",
-            "one",
-            "five",
-            "oone",
+            "fixed_amount",
             "country",
             "city",
             "code",
@@ -82,3 +80,9 @@ class DonorSerializer(serializers.Serializer):
 class RecentDonorsSerializer(serializers.Serializer):
     donor = DonorSerializer(read_only=True)
 
+
+class AcceptorListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Acceptor
+        fields = ("name", "picture", "id")

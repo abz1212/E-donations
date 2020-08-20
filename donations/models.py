@@ -4,6 +4,19 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
+def acceptor_upload_to(instance: "Acceptor", filename: str) -> str:
+    """A help Function to change the image upload path.
+
+    Args:
+        instance: django model
+        filename: the uploaded file name
+
+    Returns:
+        path in string format
+    """
+    return f"images/acceptor/{instance.name}/{filename}"
+
+
 class BloodType(models.TextChoices):
     """Enum class for blood type."""
 
@@ -41,6 +54,16 @@ class Organization(models.TextChoices):
         "ETHIOPIAN CENTER FOR DISABILITY AND DEVLOPMENT",
         _("ETHIOPIAN CENTER FOR DISABILITY AND DEVLOPMENT")
     )
+
+
+class FixedAmount(models.IntegerChoices):
+    """Enum class for amount type."""
+
+    ONE_HUNDRED = 100
+
+    FIVE_HUNDRED = 500
+
+    ONE_THOUSAND = 1000
 
 
 class OrgansChooses(models.TextChoices):
@@ -97,7 +120,7 @@ class Blood(models.Model):
 
     has_tattoo = models.BooleanField(verbose_name=_("had a tattoo"), null=True, blank=True)
 
-    been_injured = models.BooleanField(verbose_name=_("been injured with a used neddle"), null=True, blank=True)
+    been_injured = models.BooleanField(verbose_name=_("been injured with a used needle"), null=True, blank=True)
 
     blood_transfusion = models.BooleanField(verbose_name=_("had a blood transfusion"), null=True, blank=True)
 
@@ -129,16 +152,16 @@ class Organ(models.Model):
         db_index=True,
     )
 
-    ocode = models.CharField(verbose_name=_("ocode"),
+    code = models.CharField(verbose_name=_("code"),
                              max_length=40)
 
-    ocountry = models.CharField(verbose_name=_("ocountry"),
+    country = models.CharField(verbose_name=_("country"),
                                 max_length=40)
 
-    ocity = models.CharField(verbose_name=_("ocity"),
+    city = models.CharField(verbose_name=_("city"),
                              max_length=40)
 
-    onumber = models.CharField(verbose_name=_("onumber"),
+    number = models.CharField(verbose_name=_("number"),
                                max_length=40)
 
     organ = models.CharField(choices=OrgansChooses.choices, verbose_name=_("organ"), max_length=200)
@@ -178,6 +201,30 @@ class Organ(models.Model):
         return f"{self.donor}"
 
 
+class Acceptor(models.Model):
+    """Reference acceptor model."""
+
+    name = models.CharField(verbose_name=_("name"), max_length=300)
+
+    picture = models.ImageField(
+        verbose_name=_("picture"),
+        default="images/default/pic.jpg",
+        upload_to=acceptor_upload_to,
+    )
+
+    created_at = models.DateTimeField(verbose_name=_("created at"), auto_now_add=True)
+
+    class Meta:
+        """Meta data."""
+
+        verbose_name = _("acceptor")
+        verbose_name_plural = _("acceptors")
+
+    def __str__(self: "Acceptor") -> str:
+        """It return readable name for the model."""
+        return f"{self.name}"
+
+
 class Sponsor(models.Model):
     """Reference sponsor model."""
 
@@ -191,9 +238,11 @@ class Sponsor(models.Model):
 
     organization = models.CharField(choices=Organization.choices, verbose_name=_("organization"), max_length=300, blank=True, null=True)
 
-    users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="users_sponsors", blank=True)
+    users = models.ManyToManyField(Acceptor, related_name="sponsors", blank=True, verbose_name=_("acceptor"))
 
-    amount = models.PositiveIntegerField(verbose_name=_("amount"))
+    amount = models.PositiveIntegerField(verbose_name=_("amount"), null=True, blank=True)
+
+    fixed_amount = models.IntegerField(verbose_name=_("fixed amount"), choices=FixedAmount.choices, null=True, blank=True)
 
     code = models.CharField(verbose_name=_("code"),
                             max_length=4)
@@ -203,12 +252,6 @@ class Sponsor(models.Model):
                                max_length=40)
     city = models.CharField(verbose_name=_("city"),
                             max_length=40)
-
-    one = models.BooleanField(verbose_name=_("one"), null=True, blank=True)
-
-    five = models.BooleanField(verbose_name=_("five"), null=True, blank=True)
-
-    oone = models.BooleanField(verbose_name=_("oone"), null=True, blank=True)
 
     created_at = models.DateTimeField(verbose_name=_("created at"), auto_now_add=True)
 

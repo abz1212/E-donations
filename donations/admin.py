@@ -1,7 +1,7 @@
 """Admin module for users app."""
 from django.contrib import admin
 
-from .models import Blood, Sponsor, Organ
+from .models import Blood, Sponsor, Organ, Acceptor
 
 
 @admin.register(Blood)
@@ -67,3 +67,25 @@ class OrganAdmin(admin.ModelAdmin):
     )
 
     list_filter = ("organ", "created_at")
+
+
+@admin.register(Acceptor)
+class AcceptorAdmin(admin.ModelAdmin):
+    """Configure the acceptor model in admin page."""
+
+    date_hierarchy = "created_at"
+
+    list_display = (
+        "name",
+        "picture",
+        "created_at",
+    )
+
+    ordering = (
+        "name",
+        "picture",
+        "created_at",
+    )
+
+    list_filter = ("created_at",)
+

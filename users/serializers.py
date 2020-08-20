@@ -1,6 +1,7 @@
 from django.contrib.auth.password_validation import validate_password
-from rest_framework import serializers
+from rest_framework import serializers, exceptions
 from .models import CustomUser
+from .validators import validate_confusables, validate_confusables_email, validate_reserved_name
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -26,9 +27,27 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         password = validated_data.pop('password')
+
+        username = validated_data.get("username")
+
+        email = validated_data.get("email")
+
+        local, domain = email.split("email")
+
+        validate_reserved_name(value=username, exception_class=exceptions.ValidationError)
+
+        validate_reserved_name(value=local, exception_class=exceptions.ValidationError)
+
+        validate_confusables(value=username, exception_class=exceptions.ValidationError)
+
+        validate_confusables_email(local_part=local, domain=domain, exception_class=exceptions.ValidationError)
+
         user = CustomUser(**validated_data)
+
         user.set_password(password)
+
         user.save()
+
         return user
 
 

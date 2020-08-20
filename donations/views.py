@@ -1,12 +1,12 @@
 from itertools import chain
 
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework import permissions
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import BloodDonationRequestsSerializer, OrganDonationRequestsSerializer, MoneyDonationSerializer, \
-    RecentDonorsSerializer
-from .models import Blood, Sponsor, Organ
+    RecentDonorsSerializer, AcceptorListSerializer
+from .models import Blood, Sponsor, Organ, Acceptor
 
 
 class BloodDonationRequestsCreateAPI(CreateAPIView):
@@ -49,3 +49,8 @@ def recent_donors(request):
     serializer = RecentDonorsSerializer(qs, many=True)
 
     return Response(serializer.data)
+
+
+class AcceptorAPI(ListAPIView):
+    serializer_class = AcceptorListSerializer
+    queryset = Acceptor.objects.all()

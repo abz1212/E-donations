@@ -49,8 +49,7 @@ class UserPictureUpdateAPI(UpdateAPIView):
     def get_object(self):
         queryset = self.get_queryset()
         user = self.request.user
-        obj = get_object_or_404(queryset, username=user.username)
-        return obj
+        return get_object_or_404(queryset, username=user.username)
 
 
 class UserpasswordUpdateAPI(GenericAPIView):
@@ -60,8 +59,7 @@ class UserpasswordUpdateAPI(GenericAPIView):
     def get_object(self):
         queryset = self.get_queryset()
         user = self.request.user
-        obj = get_object_or_404(queryset, username=user.username)
-        return obj
+        return get_object_or_404(queryset, username=user.username)
 
     def put(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

@@ -1,7 +1,7 @@
 """donations URL Configuration."""
 from django.urls import path
 
-from .views import BloodDonationRequestsCreateAPI, OrganDonationRequestsCreateAPI, MoneyDonationCreateAPI, recent_donors
+from .views import BloodDonationRequestsCreateAPI, OrganDonationRequestsCreateAPI, MoneyDonationCreateAPI, recent_donors, AcceptorAPI
 
 urlpatterns = [
 
@@ -12,5 +12,7 @@ urlpatterns = [
     path("money/", MoneyDonationCreateAPI.as_view()),
 
     path("recent/", recent_donors),
+
+    path("acceptor/", AcceptorAPI.as_view()),
 
 ]
