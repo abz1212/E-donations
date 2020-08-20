@@ -65,9 +65,6 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# Translations
-*.mo
-
 # Django stuff:
 
 # Flask stuff:
@@ -335,7 +332,6 @@ modules.xml
 [Ii]nclude
 [Ll]ib
 [Ll]ib64
-[Ll]ocal
 [Ss]cripts
 pyvenv.cfg
 pip-selfcheck.json

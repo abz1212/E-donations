@@ -1,0 +1,383 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-20 12:47+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: contact/apps.py:10 contact/models.py:23
+msgid "contact"
+msgstr ""
+
+#: contact/models.py:8
+msgid "title"
+msgstr ""
+
+#: contact/models.py:10 users/models.py:31
+msgid "full name"
+msgstr ""
+
+#: contact/models.py:12 users/models.py:29
+msgid "email address"
+msgstr ""
+
+#: contact/models.py:14 users/models.py:43
+msgid "phone number"
+msgstr ""
+
+#: contact/models.py:16
+msgid "message"
+msgstr ""
+
+#: contact/models.py:18 donations/models.py:131 donations/models.py:191
+#: donations/models.py:215 donations/models.py:256
+msgid "created at"
+msgstr ""
+
+#: contact/models.py:24
+msgid "contacts"
+msgstr ""
+
+#: donations/apps.py:10
+msgid "Donations"
+msgstr ""
+
+#: donations/models.py:23
+msgid "A"
+msgstr ""
+
+#: donations/models.py:25
+msgid "A+"
+msgstr ""
+
+#: donations/models.py:27
+msgid "A-"
+msgstr ""
+
+#: donations/models.py:29
+msgid "AB"
+msgstr ""
+
+#: donations/models.py:31
+msgid "B"
+msgstr ""
+
+#: donations/models.py:33
+msgid "B+"
+msgstr ""
+
+#: donations/models.py:35
+msgid "B-"
+msgstr ""
+
+#: donations/models.py:37
+msgid "O"
+msgstr ""
+
+#: donations/models.py:39
+msgid "O+"
+msgstr ""
+
+#: donations/models.py:41
+msgid "O-"
+msgstr ""
+
+#: donations/models.py:47
+msgid "COVID-19"
+msgstr ""
+
+#: donations/models.py:49
+msgid "MAKEDONIA"
+msgstr ""
+
+#: donations/models.py:51
+msgid "SELE ENAT CHARITABLE"
+msgstr ""
+
+#: donations/models.py:55
+msgid "ETHIOPIAN CENTER FOR DISABILITY AND DEVLOPMENT"
+msgstr ""
+
+#: donations/models.py:72
+msgid "HEART"
+msgstr ""
+
+#: donations/models.py:74
+msgid "KIDENY"
+msgstr ""
+
+#: donations/models.py:76
+msgid "LIVER"
+msgstr ""
+
+#: donations/models.py:78
+msgid "LUNG"
+msgstr ""
+
+#: donations/models.py:80
+msgid "PANCREAS"
+msgstr ""
+
+#: donations/models.py:82
+msgid "INTESTINES"
+msgstr ""
+
+#: donations/models.py:90 donations/models.py:149 donations/models.py:233
+msgid "donor"
+msgstr ""
+
+#: donations/models.py:96
+msgid "blood type"
+msgstr ""
+
+#: donations/models.py:99 donations/models.py:155 donations/models.py:247
+msgid "code"
+msgstr ""
+
+#: donations/models.py:101 donations/models.py:164 donations/models.py:249
+msgid "number"
+msgstr ""
+
+#: donations/models.py:103 donations/models.py:158 donations/models.py:251
+#: users/models.py:33
+msgid "country"
+msgstr ""
+
+#: donations/models.py:105 donations/models.py:161 donations/models.py:253
+#: users/models.py:35
+msgid "city"
+msgstr ""
+
+#: donations/models.py:107 donations/models.py:243
+msgid "amount"
+msgstr ""
+
+#: donations/models.py:109
+msgid "height"
+msgstr ""
+
+#: donations/models.py:111
+msgid "weight"
+msgstr ""
+
+#: donations/models.py:113
+msgid "last donate date"
+msgstr ""
+
+#: donations/models.py:115
+msgid "do you have hiv"
+msgstr ""
+
+#: donations/models.py:117
+msgid "do you use drugs"
+msgstr ""
+
+#: donations/models.py:119 donations/models.py:177
+msgid "do you use diabetes"
+msgstr ""
+
+#: donations/models.py:121
+msgid "had a tattoo"
+msgstr ""
+
+#: donations/models.py:123
+msgid "been injured with a used needle"
+msgstr ""
+
+#: donations/models.py:125
+msgid "had a blood transfusion"
+msgstr ""
+
+#: donations/models.py:127
+msgid "been imprisoned in a prison"
+msgstr ""
+
+#: donations/models.py:129
+msgid "feedback"
+msgstr ""
+
+#: donations/models.py:136
+msgid "blood"
+msgstr ""
+
+#: donations/models.py:137
+msgid "bloods"
+msgstr ""
+
+#: donations/models.py:167 donations/models.py:196
+msgid "organ"
+msgstr ""
+
+#: donations/models.py:169
+msgid "allergies"
+msgstr ""
+
+#: donations/models.py:171
+msgid "medications"
+msgstr ""
+
+#: donations/models.py:173
+msgid "do you have a disease"
+msgstr ""
+
+#: donations/models.py:175
+msgid "do you have a asthma"
+msgstr ""
+
+#: donations/models.py:179
+msgid "do you have a hypertension"
+msgstr ""
+
+#: donations/models.py:181
+msgid "do you have a tuberculosis"
+msgstr ""
+
+#: donations/models.py:183
+msgid "do you have a cardiovascular"
+msgstr ""
+
+#: donations/models.py:185
+msgid "do you have a transplants"
+msgstr ""
+
+#: donations/models.py:187
+msgid "do you have a education"
+msgstr ""
+
+#: donations/models.py:189
+msgid "organ date registration"
+msgstr ""
+
+#: donations/models.py:197
+msgid "organs"
+msgstr ""
+
+#: donations/models.py:207
+msgid "name"
+msgstr ""
+
+#: donations/models.py:210 users/models.py:38
+msgid "picture"
+msgstr ""
+
+#: donations/models.py:220 donations/models.py:241
+msgid "acceptor"
+msgstr ""
+
+#: donations/models.py:221
+msgid "acceptors"
+msgstr ""
+
+#: donations/models.py:239
+msgid "organization"
+msgstr ""
+
+#: donations/models.py:245
+msgid "fixed amount"
+msgstr ""
+
+#: donations/models.py:261
+msgid "sponsor"
+msgstr ""
+
+#: donations/models.py:262
+msgid "sponsors"
+msgstr ""
+
+#: e_donations/settings.py:165 templates/admin/base_site.html:29
+msgid "English"
+msgstr ""
+
+#: e_donations/settings.py:165 templates/admin/base_site.html:30
+msgid "Amharic"
+msgstr ""
+
+#: e_donations/settings.py:322
+msgid "Dev"
+msgstr ""
+
+#: e_donations/settings.py:328
+msgid "Production"
+msgstr ""
+
+#: users/admin.py:40 users/admin.py:49
+msgid "Permissions"
+msgstr ""
+
+#: users/admin.py:46
+msgid "Personal info"
+msgstr ""
+
+#: users/admin.py:62
+msgid "Important dates"
+msgstr ""
+
+#: users/admin.py:82
+msgid "E-donations site admin"
+msgstr ""
+
+#: users/admin.py:83
+msgid "E-donations Dashboard"
+msgstr ""
+
+#: users/admin.py:84
+msgid "Welcome to E-donations"
+msgstr ""
+
+#: users/apps.py:10
+msgid "Users"
+msgstr ""
+
+#: users/models.py:26
+msgid "unique id"
+msgstr ""
+
+#: users/models.py:45
+msgid "date of birth"
+msgstr ""
+
+#: users/models.py:50
+msgid "profile"
+msgstr ""
+
+#: users/models.py:51
+msgid "profiles"
+msgstr ""
+
+#: users/models.py:71
+msgid "Total Blood Donation"
+msgstr ""
+
+#: users/models.py:73
+msgid "Total Money Donation"
+msgstr ""
+
+#: users/models.py:75
+msgid "Organs"
+msgstr ""
+
+#: users/validators.py:8
+msgid "This name cannot be registered.Please choose a different name."
+msgstr ""
+
+#: users/validators.py:10
+msgid ""
+"This email address cannot be registered. Please supply a different email "
+"address."
+msgstr ""
+
+#: users/validators.py:257 users/validators.py:288
+msgid "invalid"
+msgstr ""

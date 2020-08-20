@@ -7,6 +7,7 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = i18n_patterns(
+    path(route="i18n/", view=include("django.conf.urls.i18n")),
     path(f"{settings.ADMIN_URL}/", admin.site.urls),
     path(
         ".well-known/security.txt",
