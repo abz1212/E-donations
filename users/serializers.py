@@ -32,7 +32,7 @@ class UserSerializer(serializers.ModelSerializer):
 
         email = validated_data.get("email")
 
-        local, domain = email.split("email")
+        local, domain = email.split("@")
 
         validate_reserved_name(value=username, exception_class=exceptions.ValidationError)
 
