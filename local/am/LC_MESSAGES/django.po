@@ -19,194 +19,194 @@ msgstr ""
 
 #: contact/apps.py:10 contact/models.py:23
 msgid "contact"
-msgstr ""
+msgstr "አድራሻዎች"
 
 #: contact/models.py:8
 msgid "title"
-msgstr ""
+msgstr "ርዕስ"
 
 #: contact/models.py:10 users/models.py:31
 msgid "full name"
-msgstr ""
+msgstr "ሙሉ ስም"
 
 #: contact/models.py:12 users/models.py:29
 msgid "email address"
-msgstr ""
+msgstr "ኢሜይል"
 
 #: contact/models.py:14 users/models.py:43
 msgid "phone number"
-msgstr ""
+msgstr "ስልክ ቁጥር "
 
 #: contact/models.py:16
 msgid "message"
-msgstr ""
+msgstr "መልእክት"
 
 #: contact/models.py:18 donations/models.py:131 donations/models.py:191
 #: donations/models.py:215 donations/models.py:256
 msgid "created at"
-msgstr ""
+msgstr "የተፈጠረው በ"
 
 #: contact/models.py:24
 msgid "contacts"
-msgstr ""
+msgstr "አድራሻዎች"
 
 #: donations/apps.py:10
 msgid "Donations"
-msgstr ""
+msgstr "መዋጮዎች"
 
 #: donations/models.py:23
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: donations/models.py:25
 msgid "A+"
-msgstr ""
+msgstr "A+"
 
 #: donations/models.py:27
 msgid "A-"
-msgstr ""
+msgstr "A-"
 
 #: donations/models.py:29
 msgid "AB"
-msgstr ""
+msgstr "AB"
 
 #: donations/models.py:31
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: donations/models.py:33
 msgid "B+"
-msgstr ""
+msgstr "B+"
 
 #: donations/models.py:35
 msgid "B-"
-msgstr ""
+msgstr "B-"
 
 #: donations/models.py:37
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: donations/models.py:39
 msgid "O+"
-msgstr ""
+msgstr "O+"
 
 #: donations/models.py:41
 msgid "O-"
-msgstr ""
+msgstr "O-"
 
 #: donations/models.py:47
 msgid "COVID-19"
-msgstr ""
+msgstr "ኮቪድ -19"
 
 #: donations/models.py:49
 msgid "MAKEDONIA"
-msgstr ""
+msgstr "መቄዶንያ"
 
 #: donations/models.py:51
 msgid "SELE ENAT CHARITABLE"
-msgstr ""
+msgstr "ስለ እናት በጎ አድራጎት"
 
 #: donations/models.py:55
 msgid "ETHIOPIAN CENTER FOR DISABILITY AND DEVLOPMENT"
-msgstr ""
+msgstr "የኢትዮIያ አካለ ስንኩልነት እና የእድገት ውስንነት ማእከል"
 
 #: donations/models.py:72
 msgid "HEART"
-msgstr ""
+msgstr "ልብ"
 
 #: donations/models.py:74
 msgid "KIDENY"
-msgstr ""
+msgstr "ኩላሊት"
 
 #: donations/models.py:76
 msgid "LIVER"
-msgstr ""
+msgstr "ጉበት"
 
 #: donations/models.py:78
 msgid "LUNG"
-msgstr ""
+msgstr "ሳምባ"
 
 #: donations/models.py:80
 msgid "PANCREAS"
-msgstr ""
+msgstr "ጨጎራ"
 
 #: donations/models.py:82
 msgid "INTESTINES"
-msgstr ""
+msgstr "አንጅት"
 
 #: donations/models.py:90 donations/models.py:149 donations/models.py:233
 msgid "donor"
-msgstr ""
+msgstr "ለጋሽ"
 
 #: donations/models.py:96
 msgid "blood type"
-msgstr ""
+msgstr "የደም አይነት"
 
 #: donations/models.py:99 donations/models.py:155 donations/models.py:247
 msgid "code"
-msgstr ""
+msgstr "ኮድ"
 
 #: donations/models.py:101 donations/models.py:164 donations/models.py:249
 msgid "number"
-msgstr ""
+msgstr "ቁጥር"
 
 #: donations/models.py:103 donations/models.py:158 donations/models.py:251
 #: users/models.py:33
 msgid "country"
-msgstr ""
+msgstr "ሀገር"
 
 #: donations/models.py:105 donations/models.py:161 donations/models.py:253
 #: users/models.py:35
 msgid "city"
-msgstr ""
+msgstr "ከተማ"
 
 #: donations/models.py:107 donations/models.py:243
 msgid "amount"
-msgstr ""
+msgstr "መጠን"
 
 #: donations/models.py:109
 msgid "height"
-msgstr ""
+msgstr "ቁመት"
 
 #: donations/models.py:111
 msgid "weight"
-msgstr ""
+msgstr "ክብደት"
 
 #: donations/models.py:113
 msgid "last donate date"
-msgstr ""
+msgstr "የመጨረሻ የልገሳ ቀን"
 
 #: donations/models.py:115
 msgid "do you have hiv"
-msgstr ""
+msgstr "HዒV አለብክ"
 
 #: donations/models.py:117
 msgid "do you use drugs"
-msgstr ""
+msgstr "አደንዛዥ ዕፅ ይጠቀማሉ"
 
 #: donations/models.py:119 donations/models.py:177
-msgid "do you use diabetes"
-msgstr ""
+msgid "do you have diabetes"
+msgstr "የስኳር በሽታ አለብዎት"
 
 #: donations/models.py:121
 msgid "had a tattoo"
-msgstr ""
+msgstr "ንቅሳት ነበረው"
 
 #: donations/models.py:123
 msgid "been injured with a used needle"
-msgstr ""
+msgstr "በተጠቀመበት መርፌ ተጎድቷል"
 
 #: donations/models.py:125
 msgid "had a blood transfusion"
-msgstr ""
+msgstr "ደም ሰተው ያውካሉ"
 
 #: donations/models.py:127
 msgid "been imprisoned in a prison"
-msgstr ""
+msgstr "በእስር ቤት ታስረው ነበር"
 
 #: donations/models.py:129
 msgid "feedback"
-msgstr ""
+msgstr "ግብረ መልስ"
 
 #: donations/models.py:136
 msgid "blood"
@@ -214,79 +214,79 @@ msgstr ""
 
 #: donations/models.py:137
 msgid "bloods"
-msgstr ""
+msgstr "ደም"
 
 #: donations/models.py:167 donations/models.py:196
 msgid "organ"
-msgstr ""
+msgstr "አካል"
 
 #: donations/models.py:169
 msgid "allergies"
-msgstr ""
+msgstr "አለርጂዎች"
 
 #: donations/models.py:171
 msgid "medications"
-msgstr ""
+msgstr "መድኃኒቶች"
 
 #: donations/models.py:173
 msgid "do you have a disease"
-msgstr ""
+msgstr "በሽታ አለህ"
 
 #: donations/models.py:175
 msgid "do you have a asthma"
-msgstr ""
+msgstr "አስም አለህ"
 
 #: donations/models.py:179
 msgid "do you have a hypertension"
-msgstr ""
+msgstr "የደም ግፊት አለህ"
 
 #: donations/models.py:181
 msgid "do you have a tuberculosis"
-msgstr ""
+msgstr "የሳንባ ነቀርሳ / ሕመም አለብዎት"
 
 #: donations/models.py:183
 msgid "do you have a cardiovascular"
-msgstr ""
+msgstr "የልብና የደም ቧንቧ ሕክምና አለህ"
 
 #: donations/models.py:185
 msgid "do you have a transplants"
-msgstr ""
+msgstr "መተላለፊያዎች አሎት"
 
 #: donations/models.py:187
 msgid "do you have a education"
-msgstr ""
+msgstr "ትምህርት አለህ"
 
 #: donations/models.py:189
 msgid "organ date registration"
-msgstr ""
+msgstr "የአካል ቀን ምዝገባ"
 
 #: donations/models.py:197
 msgid "organs"
-msgstr ""
+msgstr "አካላት"
 
 #: donations/models.py:207
 msgid "name"
-msgstr ""
+msgstr "ስም"
 
 #: donations/models.py:210 users/models.py:38
 msgid "picture"
-msgstr ""
+msgstr "ስዕል"
 
 #: donations/models.py:220 donations/models.py:241
 msgid "acceptor"
-msgstr ""
+msgstr "ተቀባይ"
 
 #: donations/models.py:221
 msgid "acceptors"
-msgstr ""
+msgstr "ተቀባዮች"
 
 #: donations/models.py:239
 msgid "organization"
-msgstr ""
+msgstr "ድርጅት"
 
 #: donations/models.py:245
 msgid "fixed amount"
-msgstr ""
+msgstr "የተወሰነ መጠን"
 
 #: donations/models.py:261
 msgid "sponsor"
@@ -294,90 +294,90 @@ msgstr ""
 
 #: donations/models.py:262
 msgid "sponsors"
-msgstr ""
+msgstr "ድጋፍ ሰጭ"
 
 #: e_donations/settings.py:165 templates/admin/base_site.html:29
 msgid "English"
-msgstr ""
+msgstr "እንግሊዝኛ"
 
 #: e_donations/settings.py:165 templates/admin/base_site.html:30
 msgid "Amharic"
-msgstr ""
+msgstr "አማርኛ"
 
 #: e_donations/settings.py:322
 msgid "Dev"
-msgstr ""
+msgstr "በ ስራ ላይ"
 
 #: e_donations/settings.py:328
 msgid "Production"
-msgstr ""
+msgstr "ምርት"
 
 #: users/admin.py:40 users/admin.py:49
 msgid "Permissions"
-msgstr ""
+msgstr "ፈቃዶች"
 
 #: users/admin.py:46
 msgid "Personal info"
-msgstr ""
+msgstr "የግል መረጃ"
 
 #: users/admin.py:62
 msgid "Important dates"
-msgstr ""
+msgstr "አስፈላጊ ቀናት"
 
 #: users/admin.py:82
 msgid "E-donations site admin"
-msgstr ""
+msgstr "E-donations ጣቢያ አስተዳዳሪ"
 
 #: users/admin.py:83
 msgid "E-donations Dashboard"
-msgstr ""
+msgstr "E-donations ዳሽቦርድ"
 
 #: users/admin.py:84
 msgid "Welcome to E-donations"
-msgstr ""
+msgstr "ወደ E-donations እንኳን በደህና መጡ"
 
 #: users/apps.py:10
 msgid "Users"
-msgstr ""
+msgstr "ተጠቃሚዎች"
 
 #: users/models.py:26
 msgid "unique id"
-msgstr ""
+msgstr "ልዩ መታወቂያ"
 
 #: users/models.py:45
 msgid "date of birth"
-msgstr ""
+msgstr "የትውልድ ቀን"
 
 #: users/models.py:50
 msgid "profile"
-msgstr ""
+msgstr "መገለጫ"
 
 #: users/models.py:51
 msgid "profiles"
-msgstr ""
+msgstr "መገለጫዎች"
 
 #: users/models.py:71
 msgid "Total Blood Donation"
-msgstr ""
+msgstr "አጠቃላይ የደም ልገሳ"
 
 #: users/models.py:73
 msgid "Total Money Donation"
-msgstr ""
+msgstr "ጠቅላላ ገንዘብ ልገሳ"
 
 #: users/models.py:75
 msgid "Organs"
-msgstr ""
+msgstr "አካል"
 
 #: users/validators.py:8
 msgid "This name cannot be registered.Please choose a different name."
-msgstr ""
+msgstr "ይህ ስም መመዝገብ አይችልም። እባክዎ የተለየ ስም ይምረጡ።"
 
 #: users/validators.py:10
 msgid ""
 "This email address cannot be registered. Please supply a different email "
 "address."
-msgstr ""
+msgstr "ይህ የኢሜይል አድራሻ መመዝገብ አይችልም ፡፡ እባክዎ የተለየ ኢሜል ያቅርቡ"
 
 #: users/validators.py:257 users/validators.py:288
 msgid "invalid"
-msgstr ""
+msgstr "አያገለግልም"
