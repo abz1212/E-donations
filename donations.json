@@ -1,0 +1,83 @@
+[
+{
+    "model": "donations.blood",
+    "pk": 1,
+    "fields": {
+        "donor": 3,
+        "blood_type": "O+",
+        "code": "251",
+        "number": "0938745623",
+        "country": "Ethiopia",
+        "city": "Addis Abeba",
+        "amount": 200,
+        "height": 158.0,
+        "weight": 55.0,
+        "last_donate_date": "2020-04-14",
+        "has_hiv": false,
+        "take_drugs": false,
+        "has_diabetes": false,
+        "has_tattoo": true,
+        "been_injured": false,
+        "blood_transfusion": false,
+        "been_in_prison": false,
+        "feedback": null,
+        "created_at": "2020-08-21T12:24:12.167Z"
+    }
+},
+{
+    "model": "donations.organ",
+    "pk": 1,
+    "fields": {
+        "donor": 4,
+        "code": "251",
+        "country": "Ethiopia",
+        "city": "Addis Abeba",
+        "number": "0922456387",
+        "organ": "KIDENY",
+        "allergies": false,
+        "medications": false,
+        "has_disease": false,
+        "has_asthma": false,
+        "has_diabetes": false,
+        "has_hypertension": false,
+        "has_tuberculosis": false,
+        "has_cardiovascular": false,
+        "has_transplants": false,
+        "has_education": true,
+        "organ_date_registration": null,
+        "created_at": "2020-08-21T12:27:37.139Z"
+    }
+},
+{
+    "model": "donations.sponsor",
+    "pk": 1,
+    "fields": {
+        "donor": 3,
+        "organization": "COVID-19",
+        "amount": 1000,
+        "fixed_amount": null,
+        "code": "251",
+        "number": "0938657434",
+        "country": "Ethiopia",
+        "city": "Addis Abeba",
+        "created_at": "2020-08-21T12:24:58.810Z",
+        "users": []
+    }
+},
+{
+    "model": "donations.sponsor",
+    "pk": 2,
+    "fields": {
+        "donor": 5,
+        "organization": "SELE ENAT CHARITABLE",
+        "amount": 500,
+        "fixed_amount": null,
+        "code": "251",
+        "number": "0922349875",
+        "country": "Ethiopia",
+        "city": "Addis Abeba",
+        "created_at": "2020-08-21T12:30:35.941Z",
+        "users": []
+    }
+}
+]
